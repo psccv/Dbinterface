@@ -34,7 +34,7 @@ tr, th, td{border:1px solid black;}
 				<c:forEach var="memberVO" items="${memberList}" varStatus="number">
 					<tr>
 						<td>${number.count}</td>
-						<td>${memberVO.userid}/></td>
+						<td>${memberVO.userid}</td>
 						<td>${memberVO.userpw}</td>
 						<td>${memberVO.username}</td>
 						<td>${memberVO.email}</td>
