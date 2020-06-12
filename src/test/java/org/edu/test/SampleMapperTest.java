@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.edu.dao.IF_SampleMapper;
+import org.edu.dao.IF_SampleDAO;
 import org.edu.vo.MemberVO;
 // import org.edu.dao.SampleSelectProvider;
 import org.junit.Test;
@@ -36,7 +36,7 @@ public class SampleMapperTest {
 	
 	// interface 로 Mybatis 쿼리 사용 DI처리(Dependency Injcetion)
 	@Inject
-	private IF_SampleMapper mapper; //인터페이스를 실행가능하게 mapper변수로 지정 
+	private IF_SampleDAO mapper; //인터페이스를 실행가능하게 mapper변수로 지정 
 	//구형 웹프로그램=> /IF_SampleMapper mapper = new IF_SampleMapper();
 	
 	@Test

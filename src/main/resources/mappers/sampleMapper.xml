@@ -14,14 +14,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="org.edu.dao.IF_SampleMapper">
+<mapper namespace="org.edu.dao.IF_SampleDAO">
 	
 	<insert id="insertMember">
 		insert into member(userid, userpw, username, email, regdate)
 		values(#{userid}, #{userpw}, #{username}, #{email}, now())	
 	</insert>
 	<select id="selectMember" resultType="org.edu.vo.MemberVO">
-		select * from member order by regdate desc
+		select * from interface.member order by regdate desc
 	</select>
 	<update id="updateMember">
 		update member set

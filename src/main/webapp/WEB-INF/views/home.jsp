@@ -4,6 +4,10 @@
 <html>
 <head>
 	<title>Home</title>
+<style type="text/css">
+table{border:1px solid black;}
+tr, th, td{border:1px solid black;}
+</style>
 </head>
 <body>
 <h1>
@@ -11,5 +15,36 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+
+<table class="bbsListTbl" summary="회원정보 리스트">
+				<caption class="hdd">회원정보 목록 : 제작자-${jspMaker}</caption>
+				<thead>
+					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">사용자 ID</th>
+						<th scope="col">사용자 PW</th>
+						<th scope="col">사용자 Name</th>
+						<th scope="col">사용자 Email</th>
+						<th scope="col">사용자 Regdate</th>
+						<th scope="col">사용자 Update</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				<c:forEach var="memberVO" items="${memberList}" varStatus="number">
+					<tr>
+						<td>${number.count}</td>
+						<td>${memberVO.userid}/></td>
+						<td>${memberVO.userpw}</td>
+						<td>${memberVO.username}</td>
+						<td>${memberVO.email}</td>
+						<td>${memberVO.regdate}</td>
+						<td>${memberVO.updatedate}</td>
+					</tr>
+				</c:forEach>
+					
+				</tbody>
+			</table>
+
 </body>
 </html>
