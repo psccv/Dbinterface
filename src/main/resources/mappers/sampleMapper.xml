@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values(#{userid}, #{userpw}, #{username}, #{email}, now())	
 	</insert>
 	<select id="selectMember" resultType="org.edu.vo.MemberVO">
-		select * from interface.member order by regdate desc
+		select * from interface.member order by regdate asc<!-- asc 오름차순 desc 내림차순 -->
 	</select>
 	<update id="updateMember">
 		update member set
@@ -31,15 +31,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		updatedate = now()
 		where userid = #{userid}
 	</update>
+	
 	<delete id="deleteMember">
 		delete from member where userid = #{userid}
 	</delete>
-	
-	
-	
-	
-	
-	
+
 	<select id="getUserId"  resultType="string">
 		select userid
 		  from member 
